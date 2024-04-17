@@ -84,7 +84,7 @@ The outputs are the answer choice (1 or 0 from our earlier preprocessing) that a
 ### Final Results Expected Performance
 
 Here are the expected test set performances for our models (accuracies):
-- BERT base-uncased: 0.5185 (51.85%)
+- BERT base-uncased: 0.5123 (51.23%)
 - RoBERTa base-sentiment: 0.4753 (47.53%)
 - DistilBERT base-uncased: 0.4938 (49.38%)
 - BERT base-spanish: 0.5432 (54.32%)
