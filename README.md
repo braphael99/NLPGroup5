@@ -48,7 +48,7 @@ Overall, this notebook is designed to be run sequentially. If you start from the
 
 #### Part 1: Getting Started
 
-First we recommend grabbing the dataset for training, validation, and testing. These are found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE). Please set up your file directory the following way for the code to work: Create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the parent "Project" folder for the datasets to be imported correctly. 
+First we recommend grabbing the dataset for training, validation, and testing. These are found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE), specifically in the QQA folder. To download the dataset, download all 3 .json files in the QQA folder: QQA_dev, QQA_train, and QQA_test. Afterwards, create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the "Project" folder for the datasets to be imported correctly. 
 
 Once complete, the filepath to the datasets should be base/Project/QQA_Data, where base is the directory containing the project's Jupyter notebook and QQA_Data is the folder containing the three .json files. 
 
