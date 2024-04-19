@@ -52,7 +52,7 @@ All code was run in a Jupyter Notebook on an Anaconda enviroment. To install all
 The dataset used is found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE). Please set up your file directory the following way for the code to work: Create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the parent "Project" folder for the datasets to be imported correctly. 
 
 Once complete, the directory should take on the following form:
-base:
+NLPGroup5-main:
 - Project3Code.ipynb
 - Project:
 - - QQA_Data: 
@@ -60,7 +60,7 @@ base:
     - QQA_test.json
     - QQA_train.json
 
-Where "base" is the directory containing the repository's files. 
+Where "NLPGroup5-main" is the directory containing the repository's files. 
 
 We then manipulate our datasets to fit the tokenization methods we are using later on. The manipulation of our dataset occurs from the notebook block 3 until block 7. Here we are doing the following to preprocess our dataset: remove variant questions and changing the answer column to either a 1 or 0 (1 for Option 2, 0 for Option 1). This leaves us with a dataset that has 4 features: A question, choice 1, choice 2, and a label that is our correct answer. We then tokenize our data so we can set up for training. This set up ensures that new users do not have to adjust much if anything at all to preprocess our datasets. Just click run and go.
 
