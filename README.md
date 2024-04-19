@@ -3,10 +3,10 @@
 ## Project Contributors:
 
 - Anand Odbayar: Contributor (Technical Reports, Final Presentation)
-- Blake Raphael: Core Contributor (Dataset Acquisition, Evaluating, Technical Reports, Final Presentation)
-- Giovanni Evans: Core Contributor (Dataset Acquisition, Evaluating, Technical Reports, Final Presentation)
+- Blake Raphael: Core Contributor (Dataset Acquisition, Evaluating, Results Gathering, Technical Reports, Final Presentation)
+- Giovanni Evans: Core Contributor (Dataset Acquisition, Evaluating, Results Gathering, Technical Reports, Final Presentation)
 - Patrick Liu: Lead (Dataset Acquisition and Maniupulation, Training, Evaluating, Results Gathering, Technical Reports, Final Presentaion)
-- Reilly Cepuritis: Contributor (Technical Reports, Final Presentation)
+- Reilly Cepuritis: Core Contributor (Results Gathering, Technical Reports, Evaluating, Final Presentation)
 
 ### Further Breakdown:
 
@@ -52,7 +52,8 @@ All code was run in a Jupyter Notebook on an Anaconda enviroment. To install all
 The dataset used is found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE). Please set up your file directory the following way for the code to work: Create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the parent "Project" folder for the datasets to be imported correctly. 
 
 Once complete, the directory should take on the following form:
-NLPGroup5-main:
+base:
+- requirements.txt
 - Project3Code.ipynb
 - Project:
 - - QQA_Data: 
@@ -66,7 +67,7 @@ We then manipulate our datasets to fit the tokenization methods we are using lat
 
 #### Part 2: Setting Up for Training
 
-While running the blocks sequentially, we arrive to the sections with ```AutoModelForMultipleChoice``` and ```DataCollatorForMultipleChoice```. Both of these sections set up our models to fit with our adjusted datasets by setting them up in a multiple choice fashion. Next we set up our function to compute our evaluation metrics (In this case we are using F1 sccore to evaluate our models). 
+While running the blocks sequentially, we arrive to the sections with ```AutoModelForMultipleChoice``` and ```DataCollatorForMultipleChoice```. Both of these sections set up our models to fit with our adjusted datasets by setting them up in a multiple choice fashion. Next we set up our function to compute our evaluation metrics (In this case we are using F1 score to evaluate our models). 
 
 #### Part 3: Training
 
@@ -95,7 +96,7 @@ We print the results from the evalutions after 3 epochs of training. This may ta
 
 #### Part 5: Results and Analysis
 
-The outputs are the answer choice (1 or 0 from our earlier preprocessing) that are then evaluated for accuracy using F1 score. This is hardcoded so please do not forget to change these when you run your versions. These evaluation results are then stored in lists to more easily graph the results. The next blocks of code are bar charts of our grouped model types of Baseline, Sentiment Analysis, and SQUaD. we then graph the best from these categories in the last bar chart. See [here](https://docs.google.com/presentation/d/1K4x0OJyhAfyJciX1ozsdWsNbCaIEuzyqk6jUJZNDq2g/edit?usp=sharing) for our in class materials discussing our procedure and results.
+The outputs are the answer choice (1 or 0 from our earlier preprocessing) that are then evaluated for accuracy using F1 score. This is hardcoded so please do not forget to change these when you run your versions. These evaluation results are then stored in lists to more easily graph the results. The next blocks of code are bar charts of our grouped model types of Baseline, Sentiment Analysis, and SQuAD. we then graph the best from these categories in the last bar chart. See [here](https://docs.google.com/presentation/d/1K4x0OJyhAfyJciX1ozsdWsNbCaIEuzyqk6jUJZNDq2g/edit?usp=sharing) for our in class materials discussing our procedure and results.
 
 ### Final Results Expected Performance
 
