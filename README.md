@@ -6,7 +6,7 @@
 - Blake Raphael: Core Contributor (Dataset Acquisition, Evaluating, Results Gathering, Technical Reports, Final Presentation)
 - Giovanni Evans: Core Contributor (Dataset Acquisition, Evaluating, Results Gathering, Technical Reports, Final Presentation)
 - Patrick Liu: Lead (Dataset Acquisition and Maniupulation, Training, Evaluating, Results Gathering, Technical Reports, Final Presentaion)
-- Reilly Cepuritis: Core Contributor ( Results Gathering, Technical Reports, Evaluating, Final Presentation)
+- Reilly Cepuritis: Core Contributor (Results Gathering, Technical Reports, Evaluating, Final Presentation)
 
 ### Further Breakdown:
 
@@ -61,7 +61,7 @@ base:
     - QQA_test.json
     - QQA_train.json
 
-Where "base" is the directory containing the repository's files. 
+Where "NLPGroup5-main" is the directory containing the repository's files. 
 
 We then manipulate our datasets to fit the tokenization methods we are using later on. The manipulation of our dataset occurs from the notebook block 3 until block 7. Here we are doing the following to preprocess our dataset: remove variant questions and changing the answer column to either a 1 or 0 (1 for Option 2, 0 for Option 1). This leaves us with a dataset that has 4 features: A question, choice 1, choice 2, and a label that is our correct answer. We then tokenize our data so we can set up for training. This set up ensures that new users do not have to adjust much if anything at all to preprocess our datasets. Just click run and go.
 
