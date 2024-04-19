@@ -28,7 +28,6 @@ Other Terminology:
 
 - Technical Reports: Project Abstract and Progress Report (Including those who wrote and proofread).
 
-
 ## Project Overview
 
 This is the repository for NLP Group 5's group project. During this project, we will compare the performance of several out-of-the-box solutions at HuggingFace on the task of quantitative question answering in English, as detailed in the first task, subtask 3 on NumEval @ SemEval 2024 (See important links below). In particular we are handling the third subtask, quantitative question answering, which uses a multiple-choice format between two choices given a question. 
@@ -48,7 +47,22 @@ Overall, this notebook is designed to be run sequentially. If you start from the
 
 #### Part 1: Getting Started
 
-First we recommend grabbing the dataset for training, validation, and testing. These are found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE). Please set up your file directory the following way for the code to work: Create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the parent "Project" folder for the datasets to be imported correctly. We then recommend installing some base and NLP packages (most recent versions) using ```pip install jupyter torch numpy matplotlib``` and ```pip install nltk spacy transformers``` We also recommend users running into issues install the latest datasets, transformers (At least version 4.11.0), and scikit-learn using ```pip install datasets transformers``` and ```pip install -U scikit-learn```. The first few blocks in the notebook are setting up for the rest of our code base. We start with a few imports and then loading our datasets. We then manipulate our datasets to fit the tokenization methods we are using later on. The manipulation of our dataset occurs from the notebook block 3 until block 7. Here we are doing the following to preprocess our dataset: remove variant questions and changing the answer column to either a 1 or 0 (1 for correct, 0 for incorrect). This leaves us with a dataset that has 4 features: A question, choice a, choice b, and a label that is our correct answer. We then tokenize our data so we can set up for training. This set up ensures that new users do not have to adjust much if anything at all to preprocess our datasets. Just click run and go.
+First we recommend grabbing the dataset for training, validation, and testing. These are found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE). Please set up your file directory the following way for the code to work: Create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the parent "Project" folder for the datasets to be imported correctly. 
+
+Once complete, the directory should take on the following form:
+base:
+- Project3Code.ipynb
+- Project:
+- - QQA_Data: 
+  - - QQA_dev.json
+    - QQA_test.json
+    - QQA_train.json
+
+Where "base" is the directory containing the repository's files. 
+
+We then recommend installing some base and NLP packages (most recent versions) using ```pip install jupyter torch numpy matplotlib``` and ```pip install nltk spacy transformers``` We also recommend users running into issues install the latest datasets, transformers (At least version 4.11.0), and scikit-learn using ```pip install datasets transformers``` and ```pip install -U scikit-learn```. The first few blocks in the notebook are setting up for the rest of our code base. We start with a few imports and then loading our datasets. 
+
+We then manipulate our datasets to fit the tokenization methods we are using later on. The manipulation of our dataset occurs from the notebook block 3 until block 7. Here we are doing the following to preprocess our dataset: remove variant questions and changing the answer column to either a 1 or 0 (1 for Option 2, 0 for Option 1). This leaves us with a dataset that has 4 features: A question, choice 1, choice 2, and a label that is our correct answer. We then tokenize our data so we can set up for training. This set up ensures that new users do not have to adjust much if anything at all to preprocess our datasets. Just click run and go.
 
 #### Part 2: Setting Up for Training
 
@@ -58,24 +72,26 @@ While running the blocks sequentially, we arrive to the sections with ```AutoMod
 
 The next section we come to is where we start to train our model. We start with setting up our model and providing arguments, encoded datasets from our training and evaluation, our tokenizer, our data collector, and finally we compute the evaluation metrics. Next we have a test block to ensure our trainer is working correctly, then we move on to our evaluator and formatting function. We then append each reference and prediction and evaluate how accurate our model is and finally print this number in a human readable format. We next define our ```trainAndEval``` function to combine our previous set up training with our evaluator
 
+The system will train a model for 3 epochs on the train split, using the validation split to validate data. Each epoch, it will save a checkpoint to the same directory as the notebook, with a unique directory for each model--each model's directory is based on its model name. It will print its results to the cell as an output. 
+
 #### Part 4: Evaluating the Models
 
-The next section of code blocks in sequential execution are setting up and evaluating different out-of-the-box models from Huggingface. In order here are the models trained and evaluated:
+The next section of code blocks in sequential execution are setting up and evaluating different out-of-the-box models from Huggingface. In order here are the models fine-tuned and evaluated:
 
 ###### Models
+- bert-case-uncased
+- distilbert
+- bert-base-spanish-wwm-cased
+- Roberta-base-squad2
+- dynamic-tinybert
+- distilbert-base-uncased-distilled-squad
+- distilbert-base-cased-distilled-squad
+- twitter-roberta-base-sentiment-latest
+- feel-it-italian-sentiment
+- Finance-Sentiment-Classification
+- reviews-sentiment-analysis
 
-- BERT base-uncased
-- RoBERTa base-sentiment
-- DistilBERT base-uncased
-- BERT base-spanish
-- RoBERTA base-SQUAD2
-- Dynamic TinyBERT
-- DistilBERT base-cased distilled SQUAD
-- DistilBERT base-uncased finetuned SQUAD
-- RoBERTa large-english sentiment
-- Feel-it italian-sentiment
-
-We print the results from the evalutions after 3 epochs of training. This does take considerable compute time (12+ hours).
+We print the results from the evalutions after 3 epochs of training. This may take considerable compute time. 
 
 #### Part 5: Results and Analysis
 
@@ -83,14 +99,15 @@ The outputs are the answer choice (1 or 0 from our earlier preprocessing) that a
 
 ### Final Results Expected Performance
 
-Here are the expected test set performances for our models (accuracies):
-- BERT base-uncased: 0.5185 (51.85%)
-- RoBERTa base-sentiment: 0.4753 (47.53%)
-- DistilBERT base-uncased: 0.4938 (49.38%)
-- BERT base-spanish: 0.5432 (54.32%)
-- RoBERTA base-SQUAD2: 0.4938 (49.38%)
-- Dynamic TinyBERT: 0.5 (50%)
-- DistilBERT base-cased distilled SQUAD: 0.4753 (47.53%)
-- DistilBERT base-uncased finetuned SQUAD: 0.4691 (46.91%)
-- RoBERTa large-english sentiment: 0.4382 (43.82%)
-- Feel-it italian-sentiment: 0.4691 (46.91%)
+Here are the expected test set performances for our models (accuracies) after fine-tuning and evaluation:
+- bert-base-uncased: 0.5123456790123457
+- distilbert: 0.4876543209876543
+- bert-base-spanish-wwm-cased: 0.5370370370370371
+- Roberta-base-squad2: 0.5246913580246914
+- dynamic-tinybert: 0.5308641975308642
+- distilbert-base-uncased-distilled-squad: 0.49382716049382713
+- distilbert-base-cased-distilled-squad: 0.5061728395061729
+- twitter-roberta-base-sentiment-latest: 0.5185185185185185
+- feel-it-italian-sentiment: 0.49382716049382713
+- Finance-Sentiment-Classification: 0.5246913580246914
+- reviews-sentiment-analysis: 0.5617283950617284
