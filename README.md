@@ -63,7 +63,11 @@ base:
 
 Where "NLPGroup5-main" is the directory containing the repository's files. 
 
-We then manipulate our datasets to fit the tokenization methods we are using later on. The manipulation of our dataset occurs from the notebook block 3 until block 7. Here we are doing the following to preprocess our dataset: remove variant questions and changing the answer column to either a 1 or 0 (1 for Option 2, 0 for Option 1). This leaves us with a dataset that has 4 features: A question, choice 1, choice 2, and a label that is our correct answer. We then tokenize our data so we can set up for training. This set up ensures that new users do not have to adjust much if anything at all to preprocess our datasets. Just click run and go.
+The initial cells load our dataset into three splits, using the QQA_train.json file as the "train" split, the QQA_dev.json file as the "validation" split, and the QQA_test.json file as the "test" split. 
+
+The next cells manipulate our datasets to fit the tokenization methods we are using later on. The manipulation of our dataset occurs from the notebook block 3 until block 7. Here we are doing the following to preprocess our dataset: remove variant questions and changing the answer column to either a 1 or 0 (1 for Option 2, 0 for Option 1). This leaves us with a dataset that has 4 features: A question, Choice 1, Choice 2, and a label that is our correct answer. 
+
+A preprocessing function is defined that transforms the question into two candidate sentences--each of which starts with the question and then ends with one of the two answers--before tokenizing them. This set up ensures that new users do not have to adjust much if anything at all to preprocess our datasets. Just click run and go.
 
 #### Part 2: Setting Up for Training
 
@@ -71,9 +75,9 @@ While running the blocks sequentially, we arrive to the sections with ```AutoMod
 
 #### Part 3: Training
 
-The next section we come to is where we start to train our model. We start with setting up our model and providing arguments, encoded datasets from our training and evaluation, our tokenizer, our data collector, and finally we compute the evaluation metrics. Next we have a test block to ensure our trainer is working correctly, then we move on to our evaluator and formatting function. We then append each reference and prediction and evaluate how accurate our model is and finally print this number in a human readable format. We next define our ```trainAndEval``` function to combine our previous set up training with our evaluator
+The next section we come to is where we start to train our model. We start with setting up our model and providing arguments, encoded datasets from our training and evaluation, our tokenizer, our data collector, and finally we compute the evaluation metrics. Next we have a test block to ensure our trainer is working correctly, then we move on to our evaluator and formatting function. We then append each reference and prediction and evaluate how accurate our model is and finally print this number in a human readable format. We next define our ```trainAndEval``` function to combine our previous set up training with our evaluator. 
 
-The system will train a model for 3 epochs on the train split, using the validation split to validate data. Each epoch, it will save a checkpoint to the same directory as the notebook, with a unique directory for each model--each model's directory is based on its model name. It will print its results to the cell as an output. 
+The "trainAndEval" function takes a function name and batch size as input, and prints the evaluated F1 micro score once it finishes fine-tuning and evaluating. Prior to training, the system preprocesses our dataset using the pre-defined preprocessing function, and then trains a model for 3 epochs on the train split, using the validation split to validate data. Each epoch, it will save a checkpoint to the same directory as the notebook, with a unique directory for each model--each model's directory is based on its model name. Once training and evaluation are complete, the cell will print its results. 
 
 #### Part 4: Evaluating the Models
 
@@ -92,11 +96,11 @@ The next section of code blocks in sequential execution are setting up and evalu
 - Finance-Sentiment-Classification
 - reviews-sentiment-analysis
 
-We print the results from the evalutions after 3 epochs of training. This may take considerable compute time. 
+We print the results from the evalutions to the cell's output after 3 epochs of training. This may take considerable compute time. 
 
 #### Part 5: Results and Analysis
 
-The outputs are the answer choice (1 or 0 from our earlier preprocessing) that are then evaluated for accuracy using F1 score. This is hardcoded so please do not forget to change these when you run your versions. These evaluation results are then stored in lists to more easily graph the results. The next blocks of code are bar charts of our grouped model types of Baseline, Sentiment Analysis, and SQuAD. we then graph the best from these categories in the last bar chart. See [here](https://docs.google.com/presentation/d/1K4x0OJyhAfyJciX1ozsdWsNbCaIEuzyqk6jUJZNDq2g/edit?usp=sharing) for our in class materials discussing our procedure and results.
+The printed evaluation results are then manually stored in lists to more easily graph the results: To save processing time and to avoid re-running cells, these are hardcoded and must be changed manually if evaluation results changed. The next blocks of code are bar charts of our grouped model types of Baseline, Sentiment Analysis, and SQuAD. we then graph the best from these categories in the last bar chart. See [here](https://docs.google.com/presentation/d/1K4x0OJyhAfyJciX1ozsdWsNbCaIEuzyqk6jUJZNDq2g/edit?usp=sharing) for our in class materials discussing our procedure and results.
 
 ### Final Results Expected Performance
 
