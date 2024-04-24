@@ -35,7 +35,7 @@ Overall, this notebook is designed to be run sequentially. If you start from the
 
 #### Part 1: Getting Started
 
-All code was run in a Jupyter Notebook on an Anaconda enviroment. To install all requirements, navigate to the project directory and run "pip install -r requirements.txt".
+All code was run in a Jupyter Notebook on an Anaconda enviroment on Python 3.10.13. To install all required packages, navigate to the project directory and run "pip install -r requirements.txt".
 
 The dataset used is found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE). Please set up your file directory the following way for the code to work: Create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the parent "Project" folder for the datasets to be imported correctly. 
 
