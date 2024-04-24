@@ -12,21 +12,9 @@
 
 - Anand Odbayar: Anand helped contribute towards the final presentation. He created the Procedure and Analysis slides. 
 - Blake Raphael: Blake contributed by finding three of our models that we tested, specifically Dynamic TinyBERT, DistilBERT Base Cased SQUaD, and DistilBERT Base Uncased SQUaD. He also wrote up a bulk of our progress report including elaborating a bit on our methodology, finding three of our related works, and explaining our next steps in the process. He also created the Premise and Hypothesis Slides as well as helping with the Related Works slides and proofreading. Blake also helped proofread the project abstract along with finding the premise and dataset.
-- Giovanni Evans: Giovanni Evans contributed towards the project by finding three of the models that were originally used in our project, but dropped due to poor results including RemBERT, Longformer, and MEGA. He also contributed to the analysis, comparison, and conclusion sections in the code implementation of the project. He also contributed to the project abstract, progress report, and final presentation. 
+- Giovanni Evans: Giovanni Evans contributed towards the project by finding three of the models that were originally used in our project, but dropped due to excessive compute time including RemBERT, Longformer, and MEGA. He also contributed to the analysis, comparison, and conclusion sections in the code implementation of the project. He also contributed to the project abstract, progress report, and final presentation. 
 - Patrick Liu: Patrick contributed by implementing most of the code base and debugging. Patrick also helped by finding the premise and dataset along with writing up the project abstract. He found the bulk of the models to test and helped format results both in the code and on the slides. Patrick found the following models to test:  BERT base-uncased, RoBERTa base-sentiment, DistilBERT base-uncased, BERT base-spanish, RoBERTA base-SQUAD2, RoBERTa large-english sentiment, and Feel-it italian-sentiment. Patrick also created the Results section of our slides and contributed to the progress report by introducing our concept, discussing our dataset, outlining a bit of our methodology, finding a related work, and explaining a few of our next steps.
-- Reilly Cepuritis: Reilly contributed by creating some of the analytical portions of the report. Reilly added some clarity working on the graphs, as well as spearheading the concluding elements of the report. Reilly also helped with organizing some of the group meetings. For the presentation, Reilly took a role in finalizing the conclusion, related works slide, as well as adding the updated graphs and proofreading for clarity. 
-
-##### Terminology:
-
-The roles are defined as below:
-
-- Lead: Individual(s) responsible for the entire workstream throughout the project.
-- Core Contributor: Individual that had significant contributions to the workstream throughout the project.
-- Contributor: Individual that had contributions to the project and was involved with the effort.
-
-Other Terminology:
-
-- Technical Reports: Project Abstract and Progress Report (Including those who wrote and proofread).
+- Reilly Cepuritis: Reilly contributed by creating some of the analytical portions of the report. Reilly added some clarity working on the graphs, as well as spearheading the concluding elements of the report. Reilly also helped with organizing some of the group meetings. For the presentation, Reilly took a role in finalizing the conclusion, related works slide, as well as adding the updated graphs and proofreading for clarity.
 
 ## Project Overview
 
