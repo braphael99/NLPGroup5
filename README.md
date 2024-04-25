@@ -52,6 +52,7 @@ All code was run in a Jupyter Notebook on an Anaconda enviroment on Python 3.10.
 The dataset used is found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE). Please set up your file directory the following way for the code to work: Create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the parent "Project" folder for the datasets to be imported correctly. 
 
 Once complete, the directory should take on the following form:
+
 NLPGroup5-main:
 - requirements.txt
 - Project3Code.ipynb
