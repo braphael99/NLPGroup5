@@ -43,16 +43,16 @@ This is the repository for NLP Group 5's group project. During this project, we 
 
 ## Implementation Explanation
 
-Overall, this notebook is designed to be run sequentially. If you start from the top down, execution should be straightforward and the models should be trained and evaluated as expected.
+Overall, this notebook is designed to be run sequentially. If you start from the top down, execution should be straightforward and the models should be trained and evaluated as expected. 
 
 #### Part 1: Getting Started
 
-All code was run in a Jupyter Notebook on an Anaconda enviroment. To install all requirements, navigate to the project directory and run "pip install -r requirements.txt".
+All code was run in a Jupyter Notebook on an Anaconda enviroment on Python 3.10.13. To install all requirements, navigate to the project directory and run "pip install -r requirements.txt". 
 
 The dataset used is found [here](https://drive.google.com/drive/folders/10uQI2BZrtzaUejtdqNU9Sp1h0H9zhLUE). Please set up your file directory the following way for the code to work: Create a "Project" folder in your repository, then create a "QQA_Data" folder within this "Project" folder. Place the dataset files within the "QQA_Data" folder. Your notebook should be outside of the parent "Project" folder for the datasets to be imported correctly. 
 
 Once complete, the directory should take on the following form:
-base:
+NLPGroup5-main:
 - requirements.txt
 - Project3Code.ipynb
 - Project:
@@ -61,17 +61,15 @@ base:
     - QQA_test.json
     - QQA_train.json
 
-Where "NLPGroup5-main" is the directory containing the repository's files. 
+Where "NLPGroup5-main" is the directory containing the repository's files. The "Project" directory within the NLPGroup5-main directory should contain a single folder, being the QQA_Data folder, which itself contains the three .json files downloaded from NumEval. 
 
-The initial cells load our dataset into three splits, using the QQA_train.json file as the "train" split, the QQA_dev.json file as the "validation" split, and the QQA_test.json file as the "test" split. 
+The initial cells load our dataset into three splits, using the QQA_train.json file as the "train" split, the QQA_dev.json file as the "validation" split, and the QQA_test.json file as the "test" split. The next cells manipulate our datasets to fit the tokenization methods we are using later on. The manipulation of our dataset occurs from the notebook block 3 until block 7. Here we are doing the following to preprocess our dataset: remove variant questions and changing the answer column to either a 1 or 0 (1 for Option 2, 0 for Option 1). This leaves us with a dataset that has 4 features: A question, Choice 1, Choice 2, and a label that is our correct answer. 
 
-The next cells manipulate our datasets to fit the tokenization methods we are using later on. The manipulation of our dataset occurs from the notebook block 3 until block 7. Here we are doing the following to preprocess our dataset: remove variant questions and changing the answer column to either a 1 or 0 (1 for Option 2, 0 for Option 1). This leaves us with a dataset that has 4 features: A question, Choice 1, Choice 2, and a label that is our correct answer. 
-
-A preprocessing function is defined that transforms the question into two candidate sentences--each of which starts with the question and then ends with one of the two answers--before tokenizing them. This set up ensures that new users do not have to adjust much if anything at all to preprocess our datasets. Just click run and go.
+A preprocessing function is defined that transforms the question into two candidate sentences--each of which starts with the question and then ends with one of the two answers--before tokenizing them using a tokenizer. 
 
 #### Part 2: Setting Up for Training
 
-While running the blocks sequentially, we arrive to the sections with ```AutoModelForMultipleChoice``` and ```DataCollatorForMultipleChoice```. Both of these sections set up our models to fit with our adjusted datasets by setting them up in a multiple choice fashion. Next we set up our function to compute our evaluation metrics (In this case we are using F1 score to evaluate our models). 
+While running the blocks sequentially, we arrive to the sections with ```AutoModelForMultipleChoice``` and ```DataCollatorForMultipleChoice```. The former of these sections sets up our models to fit with our adjusted datasets by setting them up in a multiple choice fashion, and the latter collates our data by padding all elements in a batch to the same length. Next we set up our function to compute our evaluation metrics (In this case we are using scikit's F1 score to evaluate our models). 
 
 #### Part 3: Training
 
