@@ -2,14 +2,6 @@
 
 ## Project Contributors:
 
-- Anand Odbayar: Contributor (Technical Reports, Final Presentation)
-- Blake Raphael: Core Contributor (Dataset Acquisition, Evaluating, Results Gathering, Technical Reports, Final Presentation)
-- Giovanni Evans: Core Contributor (Dataset Acquisition, Evaluating, Results Gathering, Technical Reports, Final Presentation)
-- Patrick Liu: Lead (Dataset Acquisition and Maniupulation, Training, Evaluating, Results Gathering, Technical Reports, Final Presentaion)
-- Reilly Cepuritis: Core Contributor (Results Gathering, Technical Reports, Evaluating, Final Presentation)
-
-### Further Breakdown:
-
 - Anand Odbayar: Anand helped contribute towards the final presentation. He created the Procedure and Analysis slides. 
 - Blake Raphael: Blake contributed by finding three of our models that we tested, specifically Dynamic TinyBERT, DistilBERT Base Cased SQUaD, and DistilBERT Base Uncased SQUaD. He also wrote up a bulk of our progress report including elaborating a bit on our methodology, finding three of our related works, and explaining our next steps in the process. He also created the Premise and Hypothesis Slides as well as helping with the Related Works slides and proofreading. Blake also helped proofread the project abstract along with finding the premise and dataset.
 - Giovanni Evans: Giovanni Evans contributed towards the project by finding three of the models that were originally used in our project, but dropped due to excessive compute time including RemBERT, Longformer, and MEGA. He also contributed to the analysis, comparison, and conclusion sections in the code implementation of the project. He also contributed to the project abstract, progress report, and final presentation. 
