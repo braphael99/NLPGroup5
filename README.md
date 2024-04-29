@@ -2,7 +2,7 @@
 
 ## Project Contributors:
 
-- Anand Odbayar: Contributor (Technical Reports, Final Presentation)
+- Anand Odbayar: Core Contributor (Technical Reports, Testing, Final Presentation)
 - Blake Raphael: Core Contributor (Dataset Acquisition, Evaluating, Results Gathering, Technical Reports, Final Presentation)
 - Giovanni Evans: Core Contributor (Dataset Acquisition, Evaluating, Results Gathering, Technical Reports, Final Presentation)
 - Patrick Liu: Lead (Dataset Acquisition and Maniupulation, Training, Evaluating, Results Gathering, Technical Reports, Final Presentaion)
@@ -10,7 +10,7 @@
 
 ### Further Breakdown:
 
-- Anand Odbayar: Anand helped contribute towards the final presentation. He created the Procedure and Analysis slides. 
+- Anand Odbayar: Anand helped in finalizing the project abstract and project progress report. In terms of the final presentation Anand created the Procedure, Analysis, and Future Improvements slide as well as structuring the flow of the presentation towards the end. For the code, Anand helped in finalizing the code by testing environments and writing some comments for clarification.
 - Blake Raphael: Blake contributed by finding three of our models that we tested, specifically Dynamic TinyBERT, DistilBERT Base Cased SQUaD, and DistilBERT Base Uncased SQUaD. He also wrote up a bulk of our progress report including elaborating a bit on our methodology, finding three of our related works, and explaining our next steps in the process. He also created the Premise and Hypothesis Slides as well as helping with the Related Works slides and proofreading. Blake also helped proofread the project abstract along with finding the premise and dataset.
 - Giovanni Evans: Giovanni Evans contributed towards the project by finding three of the models that were originally used in our project, but dropped due to poor results including RemBERT, Longformer, and MEGA. He also contributed to the analysis, comparison, and conclusion sections in the code implementation of the project. He also contributed to the project abstract, progress report, and final presentation. 
 - Patrick Liu: Patrick contributed by implementing most of the code base and debugging. Patrick also helped by finding the premise and dataset along with writing up the project abstract. He found the bulk of the models to test and helped format results both in the code and on the slides. Patrick found the following models to test:  BERT base-uncased, RoBERTa base-sentiment, DistilBERT base-uncased, BERT base-spanish, RoBERTA base-SQUAD2, RoBERTa large-english sentiment, and Feel-it italian-sentiment. Patrick also created the Results section of our slides and contributed to the progress report by introducing our concept, discussing our dataset, outlining a bit of our methodology, finding a related work, and explaining a few of our next steps.
